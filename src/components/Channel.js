@@ -2,7 +2,9 @@ import React from 'react';
 
 const Channel = ({ data, setFavorite, favorits }) => {
   const favoriteHandler = () => {
-    setFavorite([...favorits, data]);
+    if (!favorits.includes(data)) {
+      setFavorite([...favorits, data]);
+    }
   };
   return (
     <div className='cards-container'>
